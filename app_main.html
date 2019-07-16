@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>Expenses Analysis Tool</title>
+<link href = "styling.css" rel = "stylesheet">
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</head>
+
+<body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div class="filterbar">
+	<div class="filterfields radopt">
+		<input type="radio" name="filter" value="monthly" id="monthlyconfig"> Monthly
+		<input type="radio" name="filter" value="total" id="totalconfig"> Total
+	</div>
+	<div class="filterfields inputboxes">
+		<label for="startdate">Start:</label>
+		<input type="text" id="startdate" class="dateinput" name="startdate" readonly="true" size="10">
+		<label for="enddate">End:</label>
+		<input type="text" id="enddate" name="enddate" class="dateinput" readonly="true" size="10">
+		<button class="button go" id="gobutton">Go</button><br>
+		<input type="checkbox" name="checkcat" value="Motor & Travel" class="trans_check" checked>Motor & Travel
+		<input type="checkbox" name="checkcat" value="Training" class="trans_check" checked> Training
+		<input type="checkbox" name="checkcat" value="Courses & Seminars" class="trans_check" checked> Courses & Seminars
+		<input type="checkbox" name="checkcat" value="Expenses" class="trans_check" checked> Expenses
+	</div>
+</div>
+<div class="spendingcharts">
+	<div id="chartdisplay" class="singlechart"></div>
+</div>
+<div class="filterbar">
+	<div class="filterfields radopt">
+		<input type="radio" name="grouping" value="person" id="personconfig"> Person
+		<input type="radio" name="grouping" value="category" id="catconfig"> Category
+	</div>
+	<div class="filterfields inputboxes">
+		<select id="selectcategory"></select>
+	</div>
+</div>
+<div class="spendingcharts">
+	<div id="piechart" class="piebar"></div>
+	<div id="barchart" class="piebar"></div>
+</div>
+<script src = "currency.js"></script>
+<script src = "main_js.js"></script>
+<script src = "alldata.js"></script>
+</body>
+</html>
